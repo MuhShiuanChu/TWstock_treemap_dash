@@ -3,6 +3,7 @@ import plotly.express as px
 import dash
 from dash import dcc
 from dash import html
+from dash import Dash
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
