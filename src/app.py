@@ -10,7 +10,7 @@ app = Dash(__name__, title="DashTest1")
 
 server = app.server
 
-data_file 'test0515.csv'
+data_file = 'test0515.csv'
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
 df = pd.read_csv(DATA_PATH.joinpath(data_file))
