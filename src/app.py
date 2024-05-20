@@ -39,8 +39,7 @@ fig = px.treemap(df, path=['所屬行業', '證券代碼'], values='市值(百�
                  #width=1800, 
                  height=1000,
                  range_color=[0,15],
-                 hover_data = ['配發現金股利總金額(百萬)']
-                )
+                 hover_data = ['配發現金股利總金額(百萬)'])
 fig.update_traces(textposition='middle center', 
                   textfont_size=12,
                   texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}")
