@@ -33,16 +33,17 @@ fig = px.treemap(df, path=['所屬行業', '證券代碼'], values='市值(百�
                  color='最近年度殖利率(%)',
                  #color_continuous_scale='Tealrose',
                  color_continuous_scale='OrRd',
-                 custom_data=['股票簡稱','股價(最近收盤)','最近年度殖利率(%)'],
+                 custom_data=['股票簡稱','股價(最近收盤)','最近年度殖利率(%)','配發現金股利總金額(百萬)'],
                  color_continuous_midpoint=0.1,
                  title = 'TW-Stock market cap and dividend treemap',
                  #width=1800, 
                  height=1000,
-                 range_color=[0,15],
-                 hover_data = ['配發現金股利總金額(百萬)'])
+                 range_color=[0,15]
+                 )
 fig.update_traces(textposition='middle center', 
                   textfont_size=12,
-                  texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}")
+                  texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}",
+                  hovertemplate="%{label}<br>股利總額：%{customdata[3]}<extra></extra>")
 fig.update_layout(margin = dict(t=25, l=5, r=5, b=25),)
 
 #create_bar_figure
@@ -89,7 +90,7 @@ def data_filter(dividend):
                  color='最近年度殖利率(%)',
                  #color_continuous_scale='Tealrose',
                  color_continuous_scale='OrRd',
-                 custom_data=['股票簡稱','股價(最近收盤)','最近年度殖利率(%)'],
+                 custom_data=['股票簡稱','股價(最近收盤)','最近年度殖利率(%)','配發現金股利總金額(百萬)'],
                  color_continuous_midpoint=0.1,
                  title = 'TW-Stock market cap and dividend treemap',
                  #width=1800, 
@@ -98,7 +99,8 @@ def data_filter(dividend):
                 )
     fig.update_traces(textposition='middle center', 
                   textfont_size=12,
-                  texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}")
+                  texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}",
+                  hovertemplate="%{label}<br>股利總額：%{customdata[3]}<extra></extra>")
     fig.update_layout(margin = dict(t=25, l=5, r=5, b=25))
     
     return fig
