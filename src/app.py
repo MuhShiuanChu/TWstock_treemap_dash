@@ -38,7 +38,8 @@ fig = px.treemap(df, path=['所屬行業', '證券代碼'], values='市值(百�
                  title = 'TW-Stock market cap and dividend treemap',
                  #width=1800, 
                  height=1000,
-                 range_color=[0,15]
+                 range_color=[0,15],
+                 hover_data = ['配發現金股利總金額(百萬)']
                 )
 fig.update_traces(textposition='middle center', 
                   textfont_size=12,
@@ -65,7 +66,7 @@ fig1.update_yaxes(title_text="配發現金股利總金額(百萬)", secondary_y=
 fig1.update_yaxes(title_text="現金股利總額佔比(%)", secondary_y=True)
 
 app.layout = html.Div([
-    html.H2(children='TW stock XXX'),
+    html.H2(children='TW stock dividend treemap'),
     dcc.Graph(
         id='test',
         figure = fig),
