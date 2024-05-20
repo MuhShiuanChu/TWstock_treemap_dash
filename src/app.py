@@ -43,7 +43,7 @@ fig = px.treemap(df, path=['所屬行業', '證券代碼'], values='市值(百�
 fig.update_traces(textposition='middle center', 
                   textfont_size=12,
                   texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}",
-                  hovertemplate="%{label}<br>股利總額：%{customdata[3]}<extra></extra>")
+                  hovertemplate="%{label}<br>股利總額(百萬)：%{customdata[3]}<extra></extra>")
 fig.update_layout(margin = dict(t=25, l=5, r=5, b=25),)
 
 #create_bar_figure
@@ -100,7 +100,7 @@ def data_filter(dividend):
     fig.update_traces(textposition='middle center', 
                   textfont_size=12,
                   texttemplate= "%{label}<br>%{customdata[0]}<br>最近收盤：%{customdata[1]}<br>殖利率：%{customdata[2]}",
-                  hovertemplate="%{label}<br>股利總額：%{customdata[3]}<extra></extra>")
+                  hovertemplate="%{label}<br>股利總額(百萬)：%{customdata[3]}<extra></extra>")
     fig.update_layout(margin = dict(t=25, l=5, r=5, b=25))
     
     return fig
