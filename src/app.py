@@ -12,7 +12,8 @@ app = Dash(__name__, title="DashTest1")
 
 server = app.server
 
-data_file = 'test0520.csv'
+data_file = 'test0522.csv'
+
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
 df = pd.read_csv(DATA_PATH.joinpath(data_file))
@@ -66,7 +67,7 @@ fig1.update_yaxes(title_text="配發現金股利總金額(百萬)", secondary_y=
 fig1.update_yaxes(title_text="現金股利總額佔比(%)", secondary_y=True)
 
 app.layout = html.Div([
-    html.H2(children='TW stock dividend treemap'),
+    html.H2(children='TW stock dividend treemap'+' 2024'+str(data_file.split('.')[0][-4:])),
     dcc.Graph(
         id='test',
         figure = fig),
