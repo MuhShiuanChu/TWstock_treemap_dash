@@ -12,7 +12,7 @@ app = Dash(__name__, title="DashTest1")
 
 server = app.server
 
-data_file = 'test0612.csv'
+data_file = 'test0613.csv'
 
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
