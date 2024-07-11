@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pathlib
 
-app = Dash(__name__, title="DashTest1")
+app = Dash(__name__, title="Test")
 
 server = app.server
 
